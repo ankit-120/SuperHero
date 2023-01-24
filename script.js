@@ -15,20 +15,31 @@ const baseUrl = 'https://www.superheroapi.com/api.php/2338622222982775';
 //target the image tag
 const heroImage = document.getElementById('heroImage');
 
-//target the searchByNameBtn
-const searchByNameBtn = document.getElementById('searchByNameBtn');
-searchByNameBtn.onclick = () =>{
-    const name = document.getElementById('searchByName').value;
-    searchHero(name,0);
-}
+// //target the searchByNameBtn
+// const searchByNameBtn = document.getElementById('searchByNameBtn');
+// searchByNameBtn.onclick = () =>{
+//     const name = document.getElementById('searchByName').value;
+//     searchHero(name,0);
+// }
 
-//target the searchByIdBtn
-const searchByIdBtn = document.getElementById('searchByIdBtn');
-searchByIdBtn.onclick = () =>{
-    const id = document.getElementById('searchById').value;
-    searchHero('',id);
-}
+// //target the searchByIdBtn
+// const searchByIdBtn = document.getElementById('searchByIdBtn');
+// searchByIdBtn.onclick = () =>{
+//     const id = document.getElementById('searchById').value;
+//     searchHero('',id);
+// }
 
+const searchByIdNameBtn = document.getElementById('searchByIdNameBtn');
+searchByIdNameBtn.onclick = () =>{
+    let value = document.getElementById("searchByIdName").value;
+    console.log(value);
+    if(Number(value) > 0){
+        searchHero('',value);
+    }
+    else{
+        searchHero(value,0);
+    }
+}
 
 const createStats = (str,obj) =>{
     const stats = document.getElementById('stats');
@@ -73,6 +84,7 @@ const searchHero = (name,id) =>{
         }
         else{
             heroImage.src = json.image.url;
+            createStats('',json);
         }
     });
 }
