@@ -35,10 +35,27 @@ html,body{
 
 #responseDiv{
     /* border: 2px solid blue; */
-    height: 500px;
-    width: 800px;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.imageDiv{
+    height: 500px;
+    width: 50%;
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+
+}
+.statsDiv{
+    height: 500px;
+    width: 50%;
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #heroImage{
